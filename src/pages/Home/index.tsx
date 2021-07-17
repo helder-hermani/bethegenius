@@ -2,9 +2,6 @@ import { useState, ReactNode, useEffect } from 'react';
 import axios from '../../services/api';
 import {useHistory} from 'react-router-dom';
 
-import {useContext} from 'react';
-// import {GlobalCharactersContext} from '../../contexts/globalContexts/Characters';
-
 import styles from './Home.module.scss';
 
 import TournamentSchema from '../../assets/misc/tournament-schema.png';
@@ -16,13 +13,12 @@ import {CharacterAvatar} from '../../components/CharacterAvatar';
 import {InfoCard} from '../../components/InfoCard';
 
 import {ButtonBannerHability} from '../../components/ButtonBannerHability/index';
-
+import {setNavigationToken} from '../../contexts/globalGameFunctions';
 import {ChatactersProps} from '../../contexts/GlobalTypes';
 
 
 export function Home(){
     const history = useHistory();
-    // const {setGlobalCharactersFullList} = useContext(GlobalCharactersContext);
     const [infoModel, setInfoModel] = useState<string>("torneio");
     const [infoModelDesc, setInfoModelDesc] = useState<string>("Grupo com 8 personagens, que duelarão entre si. Vitória vale 3 pontos, empate 1 e derrota 0. Os 4 primeiros colocados se classificam para a fase de “mata-mata”.");
     const [infoModelImg, setInfoModelImg] = useState<ReactNode>(<img src={TournamentSchema} alt="Informação do jogo - Modo Torneio" />);
@@ -35,25 +31,14 @@ export function Home(){
 
     const [isHiddenHomeMain, setIsHiddenHomeMain] = useState<Boolean>(true);
 
-    // debugger;
-     
-
     useEffect(()=>{
-        console.log("executando effect");
         async function getChar(){
             const resolve = await axios.get("/myapp/characters");
             const charData = resolve.data;
             setDbFullChar(charData);
-            // setGlobalCharactersFullList(charData);
             
-            const jsonToStr = JSON.stringify(charData)
-            console.log("tipo: ", typeof jsonToStr)
-            
-            const strToJson = JSON.parse(jsonToStr)
-            console.log(strToJson)
-            
+            const jsonToStr = JSON.stringify(charData)          
             localStorage.setItem("CharactersFullList",jsonToStr);
-
 
             setDbShortChar(charData.slice(0,6));
             setDbChar(charData.slice(0,6));
@@ -88,7 +73,8 @@ export function Home(){
     }
 
     function gotoPage(rota:string){
-        history.push(rota);
+        const routeToken = setNavigationToken();
+        history.push(`${rota}/${routeToken}`);
     }
 
     return(
@@ -156,7 +142,6 @@ export function Home(){
                             dbChar.map((el) => (
                                 <div key={el.id} className={styles.chars}>
                                     <CharacterAvatar charData={{name: el.name, avatarUrl: el.avatarUrl}} hasFloatBio={true} floatContent={el.bio}/>
-                                    {/* <CharacterAvatar avatarUrl={el.avatarUrl} name={el.name} hasFloatBio={true} floatContent={el.bio}/> */}
                                 </div>
                             ))
                         }

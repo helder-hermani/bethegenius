@@ -1,8 +1,7 @@
-import { useState, useEffect, useContext, FormEvent } from 'react';
-import {useHistory} from 'react-router-dom';
+import { useState, useEffect, FormEvent } from 'react';
+import {useHistory, useParams} from 'react-router-dom';
 import firebase from 'firebase/app';
 import {auth} from '../../services/firebase';
-import axios from '../../services/api';
 import {baseURLDeploy} from '../../services/api'
 import { v4 as uuid } from 'uuid';
 // import {GlobalCharactersContext} from '../../contexts/globalContexts/Characters';
@@ -22,6 +21,7 @@ import {useLoginFunctions} from './useLoginFunctions';
 // import {DataMailProps} from './useLoginFunctions';
 
 import {DataMailProps, MsgBoxTypeProps, NewPlayerProps} from '../../contexts/GlobalTypes';
+import {setNavigationToken, checktNavigationToken} from '../../contexts/globalGameFunctions';
 
 type StyledPickedOptionType = {
     id:string;
@@ -33,7 +33,6 @@ type StyledPickedOptionType = {
 
 
 export function Login(){
-    // const {globalCharactersFullList} = useContext(GlobalCharactersContext);
     const Routes = useHistory();
     const [modo, setModo] = useState<StyledPickedOptionType>();
     const {getValue, StyledSelect} = useStyledSelect();
@@ -53,14 +52,24 @@ export function Login(){
     //Funções de login
     const {seekPlayer, createPlayerValidation, sendActivateMail, doLogin, createPlayer} = useLoginFunctions();
 
+    type ParamProps = {
+        routetoken: string;
+    }
+    const params:ParamProps = useParams();
+
     useEffect(()=>{
-        const gameMode:StyledPickedOptionType|undefined = getValue("select-GameMode");
-        console.log(gameMode);
-        setModo(gameMode);
-        if (gameMode?.value.optCaption=="Liga"){
-            sendMsgBox("Indisponível. Desculpe-me, modo de jogo LIGA ainda em desenvolvimento.", "error")
+        const {routetoken} = params;
+        if (checktNavigationToken(routetoken)){
+            const gameMode:StyledPickedOptionType|undefined = getValue("select-GameMode");
+            console.log(gameMode);
+            setModo(gameMode);
+            if (gameMode?.value.optCaption=="Liga"){
+                sendMsgBox("Indisponível. Desculpe-me, modo de jogo LIGA ainda em desenvolvimento.", "error")
+            }else{
+                resetMsgBox();
+            }
         }else{
-            resetMsgBox();
+            alert("Você não está autenticado");
         }
     },[clickStyledSel])
 

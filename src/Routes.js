@@ -12,7 +12,7 @@ export function Routes(){
     <BrowserRouter>
         <Switch>
             <Route path="/" exact component={Home}></Route>
-            <Route path="/login" exact component={Login}></Route>
+            <Route path="/login/:routetoken" exact component={Login}></Route>
             <Route path="/login/activate/:token" exact component={ActivatePlayer}></Route>
             <Route path="/login/activate/confirm/success" exact component={ActivationConfirm}></Route>
             <Route path="/player/page" exact component={PlayerPage}></Route>

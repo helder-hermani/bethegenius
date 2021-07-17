@@ -1,11 +1,14 @@
 import axios from '../services/api';
+import {v4 as uuid} from 'uuid';
 import {PlayerProps, ChatactersProps} from './GlobalTypes';
+import {useHistory} from 'react-router-dom';
 
 type getUpdatePlayerDataProps = {
     playerDatas?:PlayerProps;
     pushToDatabase?:Boolean;
     getFromDatabase?:Boolean;
 }
+
 
 export async function updatePlayerData({playerDatas, pushToDatabase=false}:getUpdatePlayerDataProps){
     const strPlayerDatas = JSON.stringify(playerDatas);
@@ -49,3 +52,15 @@ export function makeCoachesArrStr(choaches:Array<ChatactersProps>){
 
     return strCoaches.substr(0,strCoaches.length-1);
 }
+
+export function setNavigationToken():string{
+    const token:string = uuid();
+    localStorage.setItem("bethegeniusRouteToken", token);
+    return token;
+}
+
+export function checktNavigationToken(routeToken: string):boolean{
+    const token:string|null = localStorage.getItem("bethegeniusRouteToken");
+    return token === routeToken;
+}
+
