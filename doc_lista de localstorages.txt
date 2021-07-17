@@ -1,0 +1,7 @@
+Lista de LocalStorage:
+
+Página Home:
+CharactersFullList: Lista de todos os caracteres.
+
+Página Login /globalContexts/globalGameFunctions:
+PlayerDatas: dados do jogador

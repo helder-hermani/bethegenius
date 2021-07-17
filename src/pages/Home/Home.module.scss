@@ -1,0 +1,484 @@
+
+
+.homeMenu{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(5, 0, 34, 0.85);
+    padding: 1%;
+    font-family: 'Montserrat', sans-serif;
+    gap: 30px;
+
+    & div:nth-child(1){
+        flex: 3;
+
+        p{
+            color: rgba(255,255,255,0.8);
+            font-weight: bold;
+        }
+
+        span{
+            font-style: italic;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8em;
+        }
+    }
+    
+    & div:nth-child(2){
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.homeMain{
+    margin-top: 15%;
+    opacity: 1;
+    transition: opacity 1s;
+
+
+    .coverPix{
+        width: 100%;
+        height: 430px;
+        background-image: url('../../assets/backgrounds/game-cover.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-clip: border-box;
+        background-position: center;
+        opacity: 1;
+    }
+
+    .sectionMain{
+        width: 100%;
+        background: linear-gradient(180deg, #050022 0%, rgba(0, 0, 0, 0) 100%);
+        padding:3%;
+        display: flex;
+        // padding: 16px;
+
+        .frameInfoCards {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 2% 2% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex:2;
+
+            .infoModels{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+                margin-top: 4%;
+
+                .infoModesHeader{
+                    display: flex;
+                    gap: 8px;
+
+                    div{
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        cursor: pointer;
+                    }
+
+                    p{
+                        width: 100%;
+                        padding: 2% 4%;
+                        background: linear-gradient(180deg, #050022 41.15%, #000000 100%);
+                        // border: 1px solid #535360;
+                        box-sizing: border-box;
+                        font-family: Roboto;
+                        font-weight: bold;
+                        font-size: 1em;
+                        text-align: center;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+
+                .infoModelDesc{
+                    border: 1px solid #535360;
+                    padding: 2%;
+                    // background: rgba(5, 0, 34, 0.5);
+                    display: flex;
+                    padding: 2%;
+
+                    .infoCardModel{
+                        height: 130px;
+                        width: 100%;
+                        background-color: rgba(5, 0, 34, 0.5);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+        
+                        img{
+                            height: 100%;
+                        }
+        
+                        p{
+                            padding: 2%;
+                            color: rgba(255,255,255,.7);
+                            font-family: 'Montserrat', sans-serif;
+                            font-style: italic;
+                            line-height: 1.5;
+                            font-size: .9em;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        .divBtnJogar{
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding: 3% 0;
+            align-self: center;
+        }
+
+        .habilitiesCard {
+            flex: 1;
+            padding: 2%;
+            background: rgba(0, 0, 0, 0.9);
+
+
+            .habilitiesCardDesc{
+                margin-bottom: 5%;
+                padding: 2%;
+                background: rgba(5, 0, 34, 0.2);
+                border: 1px solid rgba(83, 83, 96, .5);
+                color: rgba(255, 255, 255, 0.6);
+                font-family: 'Montserrat', sans-serif;
+                font-size: .8rem;
+                line-height: 1.5;
+            }
+        
+
+            // .habilityCardButton{
+            //     border: solid 1px #535360;
+            //     padding: 2% 3%;
+            //     color: white;
+            //     font-family: 'Montserrat', sans-serif;
+            //     text-align: center;
+            //     background: rgba(5, 0, 34, 0.4);
+            //     display: flex;
+            //     justify-content: space-between;
+            //     align-items: center;
+            //     height: 50px;
+            //     border-radius: 3px;
+            //     gap: 8px;
+            //     cursor: pointer;
+            //     margin: 1% 0;
+
+            //     img{
+            //         border-radius: 50%;
+            //         height: 35px;
+            //         width: 35px;
+            //         flex: 1;
+            //     }
+
+            //     p{
+            //         flex: 5;
+            //     }
+            // }
+        }
+    }
+
+    .sectionBannerCarachters{
+        background-color:rgba(0, 0, 0, 0.9);
+        margin-top: 3%;
+        padding: 2%;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;   
+        
+        & p{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .CharctersBoard{
+            padding: 2%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: auto;
+            gap: 8px;
+
+            & p{
+                font-size: .7em;
+            }
+
+            .charactersAvatar{
+                display: flex;
+                padding: 3% 0%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #535360;
+                border-radius: 3px;
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .cardAvatar {
+                width: 100px;
+                height: 109px;
+            }
+
+            & img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .pShowCaracters{
+            width: 20%;
+            padding: 0 3%;
+            margin-left: auto;
+            cursor: pointer;
+            text-align: right;
+        }
+
+    }
+
+    .hightLightElement{
+        border: 1px solid #535360;
+    }
+
+    .hideElement{
+        display: none;
+    }
+}
+
+.homeMainHidden{
+    opacity: 0;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(5, 0, 34, 0.85);
+    margin-top: 20%;
+   
+    p {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-size: .8em;
+        text-align: center;
+        letter-spacing: 0.2em;
+        color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+
+
+@media (max-width: 600px){
+    .homeMenu{
+        & div:nth-child(1){
+            flex: 2;
+
+            p{
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        
+            span{
+                font-style: italic;
+                color: rgba(255,255,255,0.5);
+                font-size: .6rem;;
+                display: block;
+            }
+        }
+    }
+
+    .homeMain{
+        margin-top: 40%;
+    
+    
+        .coverPix{
+            width: 100%;
+            height: 200px;
+            background-image: url('../../assets/backgrounds/game-cover.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-clip: border-box;
+            background-position: center;
+        }
+
+        .sectionMain{
+            width: 100%;
+            background: linear-gradient(180deg, #050022 0%, rgba(0, 0, 0, 0) 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+
+            .frameInfoCards {
+                gap: 8px;
+                padding: 5%;
+
+                .infoModels{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                    width: 100%;
+                    margin-top: 10%;
+                    
+    
+                    .infoModesHeader{
+                        display: flex;
+                        gap: 4px;
+    
+                        div{
+                            width: 50%;
+                            display: flex;
+                            justify-content: center;
+                            cursor: pointer;
+                        }
+    
+                        p{
+                            width: 100%;
+                            padding: 5%;
+                            background: linear-gradient(180deg, #050022 41.15%, #000000 100%);
+                            box-sizing: border-box;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: bold;
+                            font-size: 1rem;
+                            text-align: center;
+                            color: rgba(255, 255, 255, 0.6);
+                        }
+                    }
+    
+                    .infoModelDesc{
+                        border: 1px solid #535360;
+                        padding: 2%;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 2%;
+    
+                        .infoCardModel{
+                            width: 100%;
+                            background-color: rgba(5, 0, 34, 0.5);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            padding: 3%;
+                            height: auto;
+            
+                            img{
+                                flex: 1;
+                                height: 100%;
+                                max-height: 150px;
+                            }
+            
+                            p{
+                                flex: 3;
+                                padding: 2%;
+                                color: rgba(255,255,255,.7);
+                                font-family: 'Montserrat', sans-serif;
+                                font-style: italic;
+                                line-height: 1.5;
+                                font-size: .8rem;
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .divBtnJogar{
+                // display: flex;
+                // justify-content: center;
+                margin: 6% 0;
+                width: 100%;
+            }
+        
+
+            .habilitiesCard {
+                flex: 1;
+                padding: 0 2% 10%;
+                background: rgba(0, 0, 0, 0.9);
+                // padding-left: 5%;
+                // padding-right: 5%;
+
+
+                .habilitiesCardDesc{
+                    margin-bottom: 2%;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+
+                .divBtnHabilities{
+                    width: 70%;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .sectionBannerCarachters{
+            background-color:rgba(0, 0, 0, 0.9);
+            margin: 10% 2%;
+            padding: 2%;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;   
+            
+            & p{
+                width: 100%;
+            }
+    
+            .CharctersBoard{
+                margin: 5% auto;
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                grid-template-rows: repeat(2, 109px);
+                gap: 4px;
+    
+                & p{
+                    font-size: .6em;
+                }
+    
+                .charactersAvatar{
+                    display: flex;
+                    // padding: 3% 0%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #535360;
+                    border-radius: 3px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+    
+                .cardAvatar {
+                    width: 100%;
+                    height: 100%;
+                }
+    
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            .pShowCaracters{
+                width: 40%;
+                padding: 0 3%;
+                margin-left: auto;
+                cursor: pointer;
+                text-align: right;
+            }
+    
+        }
+
+
+    }
+
+    
+
+}

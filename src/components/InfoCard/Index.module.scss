@@ -1,0 +1,87 @@
+@keyframes iconCardAnimation{
+    0%{
+        box-shadow: 0px 0px 3px 3px rgba(250, 166, 229, 0.25);
+    }
+    50% {
+        box-shadow: 0px 0px 5px 5px rgba(250, 166, 229, 0.25);
+    }
+    100%{
+        box-shadow: 0px 0px 3px 3px rgba(250, 166, 229, 0.25);
+    }
+}
+
+.Desktop{
+    display: block;
+}
+
+.Mobile{
+    display: none;
+}
+
+.infoCard{
+    height: 130px;
+    width: 100%;
+    // background-color: rgba(114, 29, 29, 0.2);
+    background: linear-gradient(180deg, rgba(114, 29, 29, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    gap: 10px;
+    transition: background-color .2s;
+    align-items: center;
+
+    img{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px 10px rgba(250, 166, 229, 0.25);
+        animation: iconCardAnimation 1s infinite;
+    }
+
+    p{
+        padding: 2%;
+        color: rgba(255,255,255,.7);
+        font-family: 'Montserrat', sans-serif;
+        font-style: italic;
+        line-height: 1.5;
+        font-size: .9em;
+    }
+}
+
+.infoCard:hover{
+    background-color: rgba(224, 56, 56, 0.2);;
+}
+
+@media (max-width: 600px){
+    .Mobile{
+        display: block;
+
+    }
+
+    .Desktop{
+        display: none;
+    }
+
+    .infoCard{
+        height: auto;
+        display: flex;
+        // flex-direction: column;
+        gap: 8px;
+        padding: 2%;
+        width: 85%;
+        align-self: center;
+        margin: 0 auto 2%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 2px #535360;
+        border: solid 1px #535360;
+
+        img{
+            width: 65px;
+            height: 65px;
+            box-shadow: none;
+        }
+
+        p{
+            // text-align: center;
+            font-size: .9rem;
+        }
+    }
+}

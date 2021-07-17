@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    box-sizing: border-box;
+    background-image: url("../assets/backgrounds/187.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.divContainerPage{
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 950px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.setHeightViewPort{
+    height: 100vh;;
+}
+
+.invisibleElement{
+    visibility: hidden;
+
+}
+.nonShowElement{
+    display: none;
+}

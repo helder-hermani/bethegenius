@@ -1,0 +1,71 @@
+.habilitiesCardDesc{
+    margin-bottom: 5%;
+    padding: 2%;
+    background: rgba(5, 0, 34, 0.2);
+    border: 1px solid rgba(83, 83, 96, .5);
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.habilityCardButton{
+    border: solid 1px #535360;
+    padding: 2% 3%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: rgba(5, 0, 34, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-radius: 3px;
+    gap: 8px;
+    cursor: pointer;
+    margin: 1% 0;
+    transition: border .5s;
+
+    img{
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        flex: 1;
+    }
+
+    p{
+        flex: 5;
+        font-size: 1rem;
+        // background-color: red;
+    }
+}
+
+.habilityCardButton:hover{
+    border: solid 1px #b4b4ca;
+}
+
+.hideElement{
+    display: none;
+}
+
+
+@media (max-width: 600px){
+    .habilityCardButton{
+        margin: 3% 0 1%;
+        display: flex;
+        justify-content: space-between;
+
+        img{
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            flex: 1;
+        }
+        p{
+            flex: 5;
+            font-size: 1rem;
+            display: block;
+            max-width: 65%;
+        }
+    }
+}

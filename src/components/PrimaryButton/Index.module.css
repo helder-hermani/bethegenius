@@ -1,0 +1,37 @@
+@keyframes neonBtn{
+    0%{
+        box-shadow: 0px 0px 5px 3px rgba(250, 253, 110, 0.25);
+    }
+    50% {
+        box-shadow: 0px 0px 20px 20px rgba(250, 253, 110, 0.25);
+    }
+    100%{
+        box-shadow: 0px 0px 5px 3px rgba(250, 253, 110, 0.25);
+    }
+}
+
+.primaryBtn{
+    /* width: 100%; */
+    display: block;
+    padding: 2% 5%;
+    background: #FFD15A;
+    box-shadow: 0px 0px 5px 3px rgba(250, 253, 110, 0.25);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: box-shadow .5s;
+    animation: neonBtn 2s infinite;
+}
+
+.primaryBtn:hover{
+    box-shadow: 0px 0px 20px 20px rgba(250, 253, 110, 0.25);
+}
+
+.primaryBtn span{
+    width: 100%;
+    text-align: center;
+}

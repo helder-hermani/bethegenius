@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+.divMainContent{
+    position: relative;
+    margin: .5% 0;
+}
+
+.container{
+    border: solid 1px black;
+    width: 100%;
+}
+
+.optionsFrame{
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+    transition: all .5s;
+    display: block;
+    z-index: 1;
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.elementSelect{
+    width: 100%;
+    height: 2rem;
+    border: solid 1px black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    transition: all .3s;
+}
+
+.elementSelect:hover{
+    filter: brightness(.9);
+}
+
+
+.applyRadius{
+    border-radius: 5px;
+}
+
+.optionDesc{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    /* border: solid 1px red; */
+}
+
+.optionIcon{
+    /* border: solid 1px blue; */
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.optionIconImg{
+    height: 98%;
+    padding: 2%;
+}
+
+.showElement{
+    display: flex;
+}
+
+.hideElement{
+    display: none;
+}
+
+@media only screen and (max-width: 440px){
+    .optionDesc{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
+    
+    .optionIcon{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .optionIconImg{
+        height: 100%;
+    }
+}
